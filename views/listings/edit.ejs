@@ -1,35 +1,78 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shelterly</title>
-  </head>
-  <body>
-    <h2>Edit your listing</h2>
+<% layout("/layouts/boilerplate.ejs")%>
 
+<div class="row mt-4">
+  <div class="col-8 offset-2">
+    <h2>Edit your listing</h2>
     <form method="POST" action="/listings/<%=listing._id%>?_method=PUT">
-      <label for="title">Title:</label>
-      <input type="text" value="<%= listing.title%>" name="title" id="" />
+      <div class="mb-3">
+        <label for="title" class="form-label">Title:</label>
+        <input
+          type="text"
+          value="<%= listing.title%>"
+          name="title"
+          id=""
+          class="form-control"
+        />
+      </div>
       <br />
-      <label for="description">Description:</label>
-      <textarea name="description" id="" rows="4" cols="30">
+      <div class="mb-3">
+        <label for="description" class="form-label">Description:</label>
+        <textarea
+          name="description"
+          id=""
+          class="from-control"
+          rows="4"
+          cols="30"
+        >
 <%= listing.description%></textarea
-      >
+        >
+      </div>
       <br />
-      <label for="title">Image:</label>
-      <input type="text" value="<%= listing.image%>" name="image" id="" />
+      <div class="mb-3">
+        <label for="title" class="form-label">Image:</label>
+        <input
+          type="text"
+          value="<%= listing.image%>"
+          name="image"
+          id=""
+          class="form-control"
+        />
+      </div>
       <br />
-      <label for="price">Price:</label>
-      <input type="number" value="<%= listing.price%>" name="price" id="" />
+      <div class="mb-3">
+        <label for="price" class="from-label">Price:</label>
+        <input
+          type="number"
+          value="<%= listing.price%>"
+          name="price"
+          id=""
+          class="form-control"
+        />
+      </div>
       <br />
-      <label for="location">Location:</label>
-      <input type="text" value="<%= listing.location%>" name="location" id="" />
+      <div class="mb-3">
+        <label for="location" class="from-label">Location:</label>
+        <input
+          type="text"
+          value="<%= listing.location%>"
+          name="location"
+          id=""
+          class="form-control"
+        />
+      </div>
       <br />
-      <label for="country">Country:</label>
-      <input type="text" value="<%= listing.country%>" name="country" id="" />
-      <br />
-      <button type="submit">Edit</button>
+      <div class="mb-3">
+        <label for="country" class="form-label">Country:</label>
+        <input
+          type="text"
+          value="<%= listing.country%>"
+          name="country"
+          id=""
+          class="form-control"
+        />
+      </div>
+
+      <button class="btn btn-dark mb-3 edit-btn" type="submit">Edit</button>
     </form>
-  </body>
-</html>
+  </div>
+</div>
