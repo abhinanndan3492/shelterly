@@ -3,7 +3,12 @@
 <div class="row mt-4">
   <div class="col-8 offset-2">
     <h2>Edit your listing</h2>
-    <form method="POST" action="/listings/<%=listing._id%>?_method=PUT">
+    <form
+      method="POST"
+      action="/listings/<%=listing._id%>?_method=PUT"
+      novalidate
+      class="needs-validation"
+    >
       <div class="mb-3">
         <label for="title" class="form-label">Title:</label>
         <input
@@ -12,7 +17,9 @@
           name="title"
           id=""
           class="form-control"
+          required
         />
+        <div class="valid-feedback">Title looks good!</div>
       </div>
       <br />
       <div class="mb-3">
@@ -23,9 +30,11 @@
           class="from-control"
           rows="4"
           cols="30"
+          required
         >
 <%= listing.description%></textarea
         >
+        <div class="invalid-feedback">Please enter a short description</div>
       </div>
       <br />
       <div class="mb-3">
@@ -36,7 +45,9 @@
           name="image"
           id=""
           class="form-control"
+          required
         />
+        <div class="invalid-feedback">Please upload an image</div>
       </div>
       <br />
       <div class="mb-3">
@@ -47,7 +58,9 @@
           name="price"
           id=""
           class="form-control"
+          required
         />
+        <div class="invalid-feedback">Price should be valid</div>
       </div>
       <br />
       <div class="mb-3">
@@ -58,7 +71,9 @@
           name="location"
           id=""
           class="form-control"
+          required
         />
+        <div class="invalid-feedback">Location should be valid</div>
       </div>
       <br />
       <div class="mb-3">
@@ -69,10 +84,13 @@
           name="country"
           id=""
           class="form-control"
+          required
         />
+        <div class="invalid-feedback">Country name should be valid</div>
       </div>
 
       <button class="btn btn-dark mb-3 edit-btn" type="submit">Edit</button>
     </form>
   </div>
 </div>
+<script src="js/script.js"></script>
